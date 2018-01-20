@@ -119,9 +119,9 @@ With nested:
 	a_0+a_5x^5+a_{10}x^{10}+a_{15}x^{15}=
 	a_0+x^5(a_{5}+x^{5}(a_{10}+x^{5}(a_{15})))\]
 	\[a_{15}x^{5}+a_{10}=b_1\qquad\text{5 multiplications and 1 addition}\]
-	\[b_1x^{5}+a_{5}=b_2\qquad\text{5 multiplications and 1 addition}\]
-	\[b_2x^{5}+a_0=b_3\qquad\text{5 multiplications and 1 addition}\]
-	$5+5+5=15$ multiplications, $1+1+1=3$ addition.
+	\[b_1x^{5}+a_{5}=b_2\qquad\text{(since $x^5$ is calculated) 1 multiplications and 1 addition}\]
+	\[b_2x^{5}+a_0=b_3\qquad\text{1 multiplications and 1 addition}\]
+	$5+1+1=7$ multiplications, $1+1+1=3$ addition.
 \end{task}
 
 \begin{task}{b)}
@@ -129,11 +129,11 @@ With nested:
 a_7x^7+a_{12}x^{12}+a_{17}x^{17}+a_{22}x^{22}+a_{27}x^{27}=
 x^7(a_{7}+x^{5}(a_{12}+x^{5}(a_{17}+x^5(a_{22}+x^{5}(a_{27})))))\]
 \[a_{27}x^{5}+a_{22}=b_1\qquad\text{5 multiplications and 1 addition}\]
-\[b_1x^{5}+a_{17}=b_2\qquad\text{5 multiplications and 1 addition}\]
-\[b_2x^{5}+a_{12}=b_3\qquad\text{5 multiplications and 1 addition}\]
-\[b_3x^{5}+a_{7}=b_4\qquad\text{5 multiplications and 1 addition}\]
-\[b_4x^{7}=b_4\qquad\text{7 multiplications}\]
-$5+5+5+5+7=27$ multiplications, $1+1+1+1=4$ addition.
+\[b_1x^{5}+a_{17}=b_2\qquad\text{(since $x^5$ is calculated) 1 multiplications and 1 addition}\]
+\[b_2x^{5}+a_{12}=b_3\qquad\text{1 multiplications and 1 addition}\]
+\[b_3x^{5}+a_{7}=b_4\qquad\text{1 multiplications and 1 addition}\]
+\[b_4x^{7}=b_4\qquad\text{2 multiplications}\]
+$5+1+1+1+2=10$ multiplications, $1+1+1+1=4$ addition.
 \end{task}
 
 \begin{task}{0.1.7}
@@ -256,3 +256,216 @@ Fractional part:
 \[(31/64)_{10}=(.011111)_2\]
 \end{task}
 
+\begin{task}{0.2.3 a)}
+Solve the integer and fractional part separately.
+	
+Integer part:
+\[10/2=5\text{ R }0\]
+\[5/2=2\text{ R }1\]
+\[2/2=1\text{ R }0\]
+\[1/2=0\text{ R }1\]
+Fractional part:
+\[.5\*2=0\text{ R }1\]
+Sum:
+\[(10.5)_{10}=(1010.1)_2\]
+\end{task}
+
+\begin{task}{b)}
+\[1/3\*2=2/3\text{ R }0\]
+\[2/3\*2=1/3\text{ R }1\]
+\[1/3\*2=2/3\text{ R }0\]
+The period is two.
+\[(1/3)_{10}=(.\overline{01})_2\]
+\end{task}
+
+\begin{task}{c)}
+\[5/7\*2=3/7\text{ R }1\]
+\[3/7\*2=6/7\text{ R }0\]
+\[6/7\*2=5/7\text{ R }1\]
+\[5/7\*2=3/7\text{ R }1\]
+The period is three.
+\[(5/7)_{10}=(.\overline{101})_2\]
+\end{task}
+
+\begin{task}{d)}
+Solve the integer and fractional part separately.
+
+Integer part:
+\[12/2=6\text{ R }0\]
+\[6/2=3\text{ R }0\]
+\[3/2=1\text{ R }1\]
+\[1/2=0\text{ R }1\]
+Fractional part:
+\[.8\*2=.6\text{ R }1\]
+\[.6\*2=.2\text{ R }1\]
+\[.2\*2=.4\text{ R }0\]
+\[.4\*2=.8\text{ R }0\]
+\[.8\*2=.6\text{ R }1\]
+The period is four.
+
+Sum:
+\[(12.8)_{10}=(1100.\overline{1100})_2\]
+\end{task}
+
+\begin{task}{e)}
+Solve the integer and fractional part separately.
+
+Integer part:
+\[55/2=27\text{ R }1\]
+\[27/2=13\text{ R }1\]
+\[13/2=6\text{ R }1\]
+\[6/2=3\text{ R }0\]
+\[3/2=1\text{ R }1\]
+\[1/2=0\text{ R }1\]
+Fractional part:
+\[.4\*2=.8\text{ R }0\]
+\[.8\*2=.6\text{ R }1\]
+\[.6\*2=.2\text{ R }1\]
+\[.2\*2=.4\text{ R }0\]
+\[.4\*2=.8\text{ R }0\]
+The period is four.
+
+Sum:
+\[(55.4)_{10}=(110111.\overline{0110})_2\]
+\end{task}
+
+\begin{task}{f)}
+\[.1\*2=.2\text{ R }0\]
+\[.2\*2=.4\text{ R }0\]
+\[.4\*2=.8\text{ R }0\]
+\[.8\*2=.6\text{ R }1\]
+\[.6\*2=.2\text{ R }1\]
+\[.2\*2=.4\text{ R }0\]
+The period is four after first bit.
+\[(0.1)_{10}=(0.0\overline{0011})_2\]
+\end{task}
+
+\begin{task}{0.2.4 a)}
+Solve the integer and fractional part separately.
+
+Integer part:
+\[11/2=5\text{ R }1\]
+\[5/2=2\text{ R }1\]
+\[2/2=1\text{ R }0\]
+\[1/2=0\text{ R }1\]
+Fractional part:
+\[.25\*2=.5\text{ R }0\]
+\[.5\*2=0\text{ R }1\]
+Sum:
+\[(11.25)_{10}=(1101.01)_2\]
+\end{task}
+
+\begin{task}{b)}
+\[2/3\*2=1/3\text{ R }1\]
+\[1/3\*2=2/3\text{ R }0\]
+\[2/3\*2=1/3\text{ R }1\]
+The period is two.
+\[(2/3)_{10}=(.\overline{10})_2\]
+\end{task}
+
+\begin{task}{c)}
+\[3/5 = 0.6\]
+\[.6\*2=.2\text{ R }1\]
+\[.2\*2=.4\text{ R }0\]
+\[.4\*2=.8\text{ R }0\]
+\[.8\*2=.6\text{ R }1\]
+\[.6\*2=.2\text{ R }1\]
+The period is four.
+\[(3/5)_{10}=(.\overline{1001})_2\]
+\end{task}
+
+\begin{task}{d)}
+Solve the integer and fractional part separately.
+
+Integer part:
+\[3/2=1\text{ R }1\]
+\[1/2=0\text{ R }1\]
+Fractional part:
+\[.2\*2=.4\text{ R }0\]
+\[.4\*2=.8\text{ R }0\]
+\[.8\*2=.6\text{ R }1\]
+\[.6\*2=.2\text{ R }1\]
+\[.2\*2=.4\text{ R }0\]
+The period is four.
+
+Sum:
+\[(3.2)_{10}=(11.\overline{0011})_2\]
+\end{task}
+
+\begin{task}{e)}
+Solve the integer and fractional part separately.
+
+Integer part:
+\[30/2=15\text{ R }0\]
+\[15/2=7\text{ R }1\]
+\[7/2=3\text{ R }1\]
+\[3/2=1\text{ R }1\]
+\[1/2=0\text{ R }1\]
+Fractional part:
+\[.6\*2=.2\text{ R }1\]
+\[.2\*2=.4\text{ R }0\]
+\[.4\*2=.8\text{ R }0\]
+\[.8\*2=.6\text{ R }1\]
+\[.6\*2=.2\text{ R }1\]
+The period is four.
+
+Sum:
+\[(30.6)_{10}=(11110.\overline{1001})_2\]
+\end{task}
+
+\begin{task}{f)}
+Solve the integer and fractional part separately.
+
+Integer part:
+\[99/2=49\text{ R }1\]
+\[49/2=24\text{ R }1\]
+\[24/2=12\text{ R }0\]
+\[12/2=6\text{ R }0\]
+\[6/2=3\text{ R }0\]
+\[3/2=1\text{ R }1\]
+\[1/2=0\text{ R }1\]
+Fractional part:
+\[.9\*2=.8\text{ R }1\]
+\[.8\*2=.6\text{ R }1\]
+\[.6\*2=.2\text{ R }1\]
+\[.2\*2=.4\text{ R }0\]
+\[.4\*2=.8\text{ R }0\]
+\[.8\*2=.6\text{ R }1\]
+The period is four after the first bit.
+
+Sum:
+\[(99.9)_{10}=(1100011.1\overline{1100})_2\]
+\end{task}
+
+\begin{task}{0.2.5}
+Solve the integer and fractional part separately. At least 4 decimal points ($3.1416$) will give the correct answer.
+
+Integer part:
+\[3/2=1\text{ R }1\]
+\[1/2=0\text{ R }1\]
+Fractional part:
+\[.14159265358979\*2=.28318530717958\text{ R }0\]
+\[.28318530717958\*2=.56637061435916\text{ R }0\]
+\[.56637061435916\*2=.13274122871832\text{ R }1\]
+\[.13274122871832\*2=.26548245743664\text{ R }0\]
+\[.26548245743664\*2=.53096491487328\text{ R }0\]
+\[.53096491487328\*2=.06192982974656\text{ R }1\]
+\[.06192982974656\*2=.12385965949312\text{ R }0\]
+\[.12385965949312\*2=.24771931898624\text{ R }0\]
+\[.24771931898624\*2=.49543863797248\text{ R }0\]
+\[.49543863797248\*2=.99087727594496\text{ R }0\]
+\[.99087727594496\*2=.98175455188992\text{ R }1\]
+\[.98175455188992\*2=.96350910377984\text{ R }1\]
+\[.96350910377984\*2=.92701820755968\text{ R }1\]
+Sum:
+\[(\pi)_{10}\approx(11.0010010000111)_2\]
+\end{task}
+
+\begin{task}{0.2.6}
+Do it the same way as in the last exercise. At least 4 decimal points ($2.7183$) will give the correct answer.
+\[(e)_{10}\approx(10.1011011111100)_2\]
+\end{task}
+
+\begin{task}{0.2.7 a)}
+\[2^6+2^4+2^2+1=64+16+4+1=85\]
+\end{task}
