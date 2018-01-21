@@ -774,5 +774,5 @@ Since $(5)_{10}=(101)_2$ and $(2^{-k})_{10}=(0.00\ldots001)_2$ where the number 
 \end{task}
 
 \begin{task}{0.3.4}
-Since $(19)_{10}=(10011)_2$ and $(2^{-k})_{10}=(0.00\ldots001)_2$ where the number of zeros is equal to $k$ the sum will be $10011.\underbrace{00\ldots00}_{k - 1 \text{ zeros}}1$. In the IEEE format the right-most 1 will be at the $(k+4)$th bit. For the number to be represented exactly in double precision $k+4 \le 52 \lra k \le 48$. The largest possible value of $k$ therefore is 48.
+Since $(19)_{10}=(10011)_2$ and $(2^{-k})_{10}=(0.00\ldots001)_2$ where the number of zeros is equal to $k$ the sum will be $10011.\underbrace{00\ldots00}_{k - 1 \text{ zeros}}1$. In the IEEE format the right-most 1 will be at the $(k+4)$th bit. If the 1 is at a position further away than the 52 bit it will be rounded down. This means if $k+4 > 52 \lra k > 48$ then $\text{fl}(19+2^{-k})=\text{fl}(19)$. The largest possible value of $k$ therefore is 48.
 \end{task}
