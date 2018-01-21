@@ -665,7 +665,7 @@ Covert decimal to binary.
 \[2/3\*2=1/3\text{ R }1\]
 \[1/3\*2=2/3\text{ R }0\]
 \[(1/3)_{10}=(.\overline{01})_2\]
-Left-justify it by shifting it twice. Since the 53 bit will be a zero round down (do nothing).
+Left-justify it by shifting it twice. Since the 53 bit will be a zero, round down (do nothing).
 \[(1/3)_{10}=1.0101\ldots01 \times 2^{-2}\]
 \end{task}
 
@@ -675,7 +675,7 @@ Covert decimal to binary.
 \[1/3\*2=2/3\text{ R }0\]
 \[2/3\*2=1/3\text{ R }1\]
 \[(2/3)_{10}=(.\overline{10})_2\]
-Left-justify it by shifting it once. Since the 53 bit will be a zero round down (do nothing).
+Left-justify it by shifting it once. Since the 53 bit will be a zero, round down (do nothing).
 \[(1/3)_{10}=1.0101\ldots01 \times 2^{-1}\]
 \end{task}
 
@@ -690,4 +690,81 @@ Covert decimal to binary.
 \[(0.9)_{10}=(.1\overline{1100})_2\]
 Left-justify it by shifting it once. Since the 53 bit will be a one and has following non-zero bits, round up.
 \[(1/3)_{10}=1.1100\ldots1101 \times 2^{-1}\]
+\end{task}
+
+\begin{task}{0.3.2 a)}
+Covert decimal to binary. Solve the integer and fractional part separately.
+
+Integer part:
+\[9/2=4\text{ R }1\]
+\[4/2=2\text{ R }0\]
+\[2/2=1\text{ R }0\]
+\[1/2=0\text{ R }1\]
+Fractional part:
+\[.5\*2=0\text{ R }1\]
+Sum:
+\[(9.5)_{10}=(1001.1)_2\]
+Left-justify it by shifting it three times then pad with zeros.
+\[(9.5)_{10}=1.00110\ldots00 \times 2^{3}\]
+\end{task}
+
+\begin{task}{b)}
+Covert decimal to binary. Solve the integer and fractional part separately.
+
+Integer part:
+\[9/2=4\text{ R }1\]
+\[4/2=2\text{ R }0\]
+\[2/2=1\text{ R }0\]
+\[1/2=0\text{ R }1\]
+Fractional part:
+\[.6\*2=.2\text{ R }1\]
+\[.2\*2=.4\text{ R }0\]
+\[.4\*2=.8\text{ R }0\]
+\[.8\*2=.6\text{ R }1\]
+\[.6\*2=.2\text{ R }1\]
+Sum:
+\[(9.6)_{10}=(1001.\overline{1001})_2\]
+Left-justify it by shifting it three times. Since the 53 bit will be a zero, round down (do nothing).
+\[(9.6)_{10}=1.0011\ldots0011 \times 2^{3}\]
+\end{task}
+
+\begin{task}{c)}
+Covert decimal to binary. Solve the integer and fractional part separately.
+
+Integer part:
+\[100/2=50\text{ R }0\]
+\[50/2=25\text{ R }0\]
+\[25/2=12\text{ R }1\]
+\[12/2=6\text{ R }0\]
+\[6/2=3\text{ R }0\]
+\[3/2=1\text{ R }1\]
+\[1/2=0\text{ R }1\]
+Fractional part:
+\[.2\*2=.4\text{ R }0\]
+\[.4\*2=.8\text{ R }0\]
+\[.8\*2=.6\text{ R }1\]
+\[.6\*2=.2\text{ R }1\]
+\[.2\*2=.4\text{ R }0\]
+Sum:
+\[(100.2)_{10}=(1100100.\overline{0011})_2\]
+Left-justify it by shifting it 6 times. Since the 53 bit will be a one and has following non-zero bits, round up.
+\[(100.2)_{10}=1.1001000011001100\ldots11001101 \times 2^{6}\]
+\end{task}
+
+\begin{task}{d)}
+Covert decimal to binary. Solve the integer and fractional part separately.
+
+Integer part:
+\[6/2=3\text{ R }0\]
+\[3/2=1\text{ R }1\]
+\[1/2=0\text{ R }1\]
+Fractional part:
+\[2/7\*2=4/7\text{ R }0\]
+\[4/7\*2=1/7\text{ R }1\]
+\[1/7\*2=2/7\text{ R }0\]
+\[2/7\*2=4/7\text{ R }0\]
+Sum:
+\[(44/7)_{10}=(110.\overline{010})_2\]
+Left-justify it by shifting it twice. Since the 53 bit will be a zero, round down (do nothing).
+\[(44/7)_{10}=1.100100100\ldots001001 \times 2^{2}\]
 \end{task}
