@@ -776,3 +776,48 @@ Since $(5)_{10}=(101)_2$ and $(2^{-k})_{10}=(0.00\ldots001)_2$ where the number 
 \begin{task}{0.3.4}
 Since $(19)_{10}=(10011)_2$ and $(2^{-k})_{10}=(0.00\ldots001)_2$ where the number of zeros is equal to $k$ the sum will be $10011.\underbrace{00\ldots00}_{k - 1 \text{ zeros}}1$. In the IEEE format the right-most 1 will be at the $(k+4)$th bit. If the 1 is at a position further away than the 52 bit it will be rounded down. This means if $k+4 > 52 \lra k > 48$ then $\text{fl}(19+2^{-k})=\text{fl}(19)$. The largest possible value of $k$ therefore is 48.
 \end{task}
+
+\begin{task}{0.3.5 a)}
+\begin{align*}
+&(1+(2^{-51}+2^{-53}))-1= \\ =
+&(1+(1.\boxed{0\ldots0}\*2^{-51}+1.\boxed{0\ldots0}\*2^{-53}))-1= \\ =
+&(1.\boxed{0\ldots0}\*2^0+1.\boxed{010\ldots0}\*2^{-51})-1= \\ =
+&1.\boxed{0\ldots010}*2^0-1.\boxed{0\ldots0}\*2^0= \\ =
+&1.\boxed{0\ldots0}*2^{-51}
+\end{align*}
+To test in Matlab (0 and 1 is representing \texttt{false} and \texttt{true} respectively):
+\begin{lstlisting}[language=Matlab]
+>> x1 = 2^(-51);
+>> x2 = x1 + 2^(-53);
+>> x3 = x2 + 1;
+>> x4 = x3 - 1;
+>> disp(x2 == x4);
+   0
+>> disp(x1 == x4);
+   1
+\end{lstlisting}
+\end{task}
+
+\begin{task}{b)}
+\begin{align*}
+&(1+(2^{-51}+2^{-52}+2^{-53}))-1= \\ =
+&(1+(1.\boxed{0\ldots0}\*2^{-51}+1.\boxed{0\ldots0}\*2^{-52}+1.\boxed{0\ldots0}\*2^{-53}))-1= \\ =
+&(1.\boxed{0\ldots0}\*2^0+1.\boxed{110\ldots0}\*2^{-51})-1= \\ =
+&1.\boxed{0\ldots100}*2^0-1.\boxed{0\ldots0}\*2^0= \\ =
+&1.\boxed{0\ldots0}*2^{-50}
+\end{align*}
+The tricky part is the rounding. $1.\boxed{0\ldots0}\*2^0+1.\boxed{110\ldots0}\*2^{-51}=1.\boxed{0\ldots011}10\ldots\*2^0$. Since the first following bit is a 1 and the rest are 0's the special rule is applied, round the 52nd bit to zero. In this case round up which equals 1.$\boxed{0\ldots0100}\*2^0$.
+
+To test in Matlab (0 and 1 is representing \texttt{false} and \texttt{true} respectively):
+\begin{lstlisting}[language=Matlab]
+>> x1 = 2^(-51);
+>> x2 = x1 + 2^(-52);
+>> x3 = x2 + 2^(-53);
+>> x4 = x3 + 1;
+>> x5 = x4 - 1;
+>> disp(x3 == x5);
+   0
+>> disp(x5 == 2^(-50));
+   1
+\end{lstlisting}
+\end{task}
