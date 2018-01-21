@@ -803,7 +803,7 @@ To test in Matlab (0 and 1 is representing \texttt{false} and \texttt{true} resp
 &(1+(2^{-51}+2^{-52}+2^{-53}))-1= \\ =
 &(1+(1.\boxed{0\ldots0}\*2^{-51}+1.\boxed{0\ldots0}\*2^{-52}+1.\boxed{0\ldots0}\*2^{-53}))-1= \\ =
 &(1.\boxed{0\ldots0}\*2^0+1.\boxed{110\ldots0}\*2^{-51})-1= \\ =
-&1.\boxed{0\ldots100}*2^0-1.\boxed{0\ldots0}\*2^0= \\ =
+&1.\boxed{0\ldots0100}*2^0-1.\boxed{0\ldots0}\*2^0= \\ =
 &1.\boxed{0\ldots0}*2^{-50}
 \end{align*}
 The tricky part is the rounding. $1.\boxed{0\ldots0}\*2^0+1.\boxed{110\ldots0}\*2^{-51}=1.\boxed{0\ldots011}10\ldots\*2^0$. Since the first following bit is a 1 and the rest are 0's the special rule is applied, round the 52nd bit to zero. In this case round up which equals 1.$\boxed{0\ldots0100}\*2^0$.
@@ -820,4 +820,24 @@ To test in Matlab (0 and 1 is representing \texttt{false} and \texttt{true} resp
 >> disp(x5 == 2^(-50));
    1
 \end{lstlisting}
+\end{task}
+
+\begin{task}{0.3.6 a)}
+\begin{align*}
+&(1+(2^{-51}+2^{-52}+2^{-54}))-1= \\ =
+&(1+(1.\boxed{0\ldots0}\*2^{-51}+1.\boxed{0\ldots0}\*2^{-52}+1.\boxed{0\ldots0}\*2^{-54}))-1= \\ =
+&(1.\boxed{0\ldots0}\*2^0+1.\boxed{1010\ldots0}\*2^{-51})-1= \\ =
+&1.\boxed{0\ldots011}*2^0-1.\boxed{0\ldots0}\*2^0= \\ =
+&1.\boxed{10\ldots0}*2^{-51}
+\end{align*}
+\end{task}
+
+\begin{task}{b)}
+\begin{align*}
+&(1+(2^{-51}+2^{-52}+2^{-60}))-1= \\ =
+&(1+(1.\boxed{0\ldots0}\*2^{-51}+1.\boxed{0\ldots0}\*2^{-52}+1.\boxed{0\ldots0}\*2^{-60}))-1= \\ =
+&(1.\boxed{0\ldots0}\*2^0+1.\boxed{1000000010\ldots0}\*2^{-51})-1= \\ =
+&1.\boxed{0\ldots011}*2^0-1.\boxed{0\ldots0}\*2^0= \\ =
+&1.\boxed{10\ldots0}*2^{-51}
+\end{align*}
 \end{task}
